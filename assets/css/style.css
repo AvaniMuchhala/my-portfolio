@@ -12,7 +12,7 @@ header {
     position: relative;
 }
 
-a {
+#top-header a {
     color: rgb(161, 206, 214);
 }
 
@@ -65,17 +65,44 @@ main h2 {
 }
 
 #about-me h2{
-    flex-grow: 1;
+    width: 20%;
     padding: 20px;
     text-align: right;
 }
 
 #about-me p{
-    flex-grow: 2;
-    width: 1000px;
+    width: 80%;
     padding: 20px;
 }
 
 p {
+    font-size: 20px;
+}
+
+/* #contact-me li {
+    display: inline;
+} */
+
+#contact-me h2 {
+    padding: 20px;
+    text-align: right;
+    width: 20%;
+
+}
+
+#contact-me ul{
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#contact-me li {
+    text-decoration: underline;
+}
+
+#contact-me a {
     font-size: 20px;
 }
