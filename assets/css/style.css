@@ -99,9 +99,12 @@ p {
 }
 
 #work #projects section {
-    background-color: aqua;
+    background-image: url("../images/web_dev_background.jpg");
+    background-size: cover;
+    filter: brightness(70%);
     /* width: 80%; */
     margin: 15px 15px;
+    border: 4px solid rgb(161, 206, 214);
 }
 
 #project-1 {
@@ -118,6 +121,28 @@ div {
 div section {
     flex: 0 0 47%;
     height: 150px;
+}
+
+#project-1, #project-2, #project-3, #project-4, #project-5 {
+    position: relative;
+}
+
+.project-title {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 175px;
+    height: 50px;
+    color:rgb(46, 45, 45);
+    background-color: rgb(161, 206, 214);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#work #projects section:hover {
+    filter:brightness(100%);
+    cursor: pointer;
 }
 
 /* #project-2, #project-3 {
