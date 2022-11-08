@@ -14,7 +14,11 @@ Below is a screenshot of how my portfolio should appear:
 
 ## Credits
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Images:
+
+https://depositphotos.com/stock-photos/portfolio.html
+https://unsplash.com/s/photos/notes
+https://www.umbrellaconsultants.com/outer-banks-web-development-web-design/
 
 ## License
 

@@ -118,8 +118,20 @@ main h2 {
 }
 
 #project-1 {
+    background-image: url("../images/portfolio_img.jpg");
+    background-size: 100% 100%;
     flex: 0 0 87%;
     height: 300px;
+}
+
+#project-2 {
+    background-image: url("../images/horiseon_img.png");
+    background-size: cover;
+}
+
+#project-3 {
+    background-image: url("../images/prework_img.jpg");
+    background-size: 100% 150%;
 }
 
 #four-projects {
@@ -156,10 +168,9 @@ main h2 {
 #contact-me ul{
     width: 80%;
     padding: 20px;
-    display: flex;
+    display: flex; /* list items are flex items in row */
     justify-content: space-evenly;
-    align-items: center;
-
+    align-items: center; /* vertically center list items */
 }
 
 #contact-me li {
@@ -168,16 +179,36 @@ main h2 {
 
 #contact-me a {
     font-size: 20px;
+    color: var(--dark-purple);
 }
 
 /* Responsive Layout */
 @media screen and (max-width: 1164px) {
+    /* Make project 1 same height as other projects */
     #project-1 {
         height: 150px;
     }
     
+    /* Make projects 2-5 same width as project 1 */
     #project-2, #project-3, #project-4, #project-5 {
         min-width: 97%;
+    }
+}
+
+@media screen and (max-width: 1080px){
+    /* Put section header on top of content */
+    #about-me, #work, #contact-me {
+        flex-direction: column;
+    }
+
+    /* Reformat section headers */
+    main h2 {
+        width: 90%;
+        border-right: none;
+        border-bottom: 3px solid var(--dark-purple);
+        text-align: left;
+        padding-bottom: 10px;
+        margin-left: 10px;
     }
 }
 
@@ -198,6 +229,7 @@ main h2 {
         text-align: center;
     }
 
+    /* Move subtitle below image */
     header h2 {
         min-width: 100%;
         text-align: center;
@@ -206,44 +238,15 @@ main h2 {
     }
 }
 
-/* @media screen and (max-width: 986px) {
-    #top-header {
+@media screen and (max-width: 800px){
+    /* Stack contact items vertically to left of screen */
+    #contact-me ul {
         flex-direction: column;
-        width: 100%;
+        align-items: flex-start;
     }
 
-    #top-header h1 {
-        width: 100%;
-        text-align: center;
+    /* Separate list items from each other */
+    #contact-me li {
+        padding: 5px;
     }
-
-
-} */
-
-/* @media screen and (max-width: 768px) {
-    header, #top-header {
-      flex-direction: column;
-    }
-
-    #top-header h1 {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav li {
-        display: block;
-        text-align: center;
-    }
-
-    #about-me {
-        flex-direction: column;
-    }
-
-    main h2 {
-        width: 100%;
-        border-right: none;
-        border-bottom: 3px solid var(--dark-purple);
-        text-align: left;
-        padding-bottom: 10px;
-    }
-}  */
+}
