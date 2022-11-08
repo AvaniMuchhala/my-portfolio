@@ -60,6 +60,7 @@ header img {
     border: 3px solid var(--dark-gray);
     margin-left: 2%;
     height: 250px;
+    position: relative;
 }
 
 /* Subtitle */
@@ -210,6 +211,11 @@ main h2 {
         padding-bottom: 10px;
         margin-left: 10px;
     }
+
+    /* TODO: center paragraph on smaller screen sizes */
+    #about-me p {
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -217,6 +223,7 @@ main h2 {
     #top-header h1 {
         min-width: 100%;
         text-align: center;
+        padding: 0px;
     }
 
     /* When navbar moves to next line, center navbar */
@@ -224,9 +231,14 @@ main h2 {
         margin: 0 auto;
     }
 
-    /* TODO: center image */
+    /* Decrease padding between navbar list items so they fit on same line */
+    nav li {
+        padding: 10px;
+    }
+
+    /* TODO: center image properly */
     header img {
-        text-align: center;
+        left: 30%; 
     }
 
     /* Move subtitle below image */
@@ -234,7 +246,7 @@ main h2 {
         min-width: 100%;
         text-align: center;
         left: 0;
-        bottom: 0;
+        bottom: -32px;
     }
 }
 
@@ -248,5 +260,11 @@ main h2 {
     /* Separate list items from each other */
     #contact-me li {
         padding: 5px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    header {
+      width: 100vh;
     }
 }
