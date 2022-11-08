@@ -1,7 +1,14 @@
+/* CSS Variables */
+:root {
+    --dark-purple: rgb(17, 2, 17);
+    --dull-aqua: rgb(161, 206, 214);
+    --dark-gray: rgb(46, 45, 45);
+}
+
 body {
     height: 100vh;
     background-color: rgb(240, 230, 240);
-    color: rgb(17, 2, 17);
+    color: var(--dark-purple);
 }
 
 /***** HEADER *****/
@@ -9,63 +16,60 @@ header {
     min-height: 30%;
     background-image: url("../images/background_portfolio.png");
     background-position: center;
-    position: relative;
-    /* display: flex;
-    flex-wrap: wrap; */
+    position: relative; /* to position subtitle relative to header */
 }
 
 /* Top Gray Header */
-#top-header a {
-    color: rgb(161, 206, 214);
-}
-
-nav li {
-    display: inline;
-    text-decoration: underline;
-    padding: 20px;
-    font-size: 25px;
-}
-
-nav ul {
-    float: right;
-    padding: 0 30px 0 0;
-    display: flex;
-}
-
 #top-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* position name and nav bar to ends of site */ 
+    display: flex; /* to align name and navbar in row */
+    flex-wrap: wrap; /* wrap navbar to next line if doesnt fit */
+    justify-content: space-between; /* position name and navbar to ends of site */ 
     align-items: center; /* position elements in center vertically */
-    background-color: rgb(46, 45, 45);
+    background-color: var(--dark-gray);
     min-height: 70px;
 }
 
 /* Name */
 #top-header h1 {
-    background-color: rgb(161, 206, 214);
-    color:rgb(46, 45, 45);
+    background-color: var(--dull-aqua);
+    color: var(--dark-gray);
     font-size: 50px;
     height: 50px;
     padding: 0 0 0 30px;
 }
 
-/* Subtitle */
-header h2 {
-    background-color: rgb(161, 206, 214);
-    font-size: 35px;
-    color: rgb(46, 45, 45);
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+nav ul {
+    float: right;
+    padding: 0 30px 0 0;
+    display: flex; /* to align list items in row */
+}
+
+nav li {
+    text-decoration: underline;
+    padding: 20px;
+    font-size: 25px;
+}
+
+nav a {
+    color: var(--dull-aqua);
 }
 
 /* Profile Image */
 header img {
     border-radius: 25%;
-    border: 3px solid rgb(46, 45, 45);
+    border: 3px solid var(--dark-gray);
     margin-left: 2%;
     height: 250px;
+}
+
+/* Subtitle */
+header h2 {
+    background-color: var(--dull-aqua);
+    font-size: 35px;
+    color: var(--dark-gray);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 /***** MAIN SECTION *****/
@@ -76,7 +80,7 @@ main {
 /* Section titles */
 main h2 {
     font-size: 50px;
-    border-right: 3px solid rgb(17, 2, 17);
+    border-right: 3px solid var(--dark-purple);
     padding: 20px;
     text-align: right;
     width: 20%;
@@ -109,7 +113,7 @@ main h2 {
     filter: brightness(70%);
     /* width: 80%; */
     margin: 15px 15px;
-    border: 4px solid rgb(161, 206, 214);
+    border: 4px solid var(--dull-aqua);
     position: relative;
 }
 
@@ -135,8 +139,8 @@ div a {
     left: 0;
     width: 175px;
     height: 50px;
-    color:rgb(46, 45, 45);
-    background-color: rgb(161, 206, 214);
+    color:var(--dark-gray);
+    background-color: var(--dull-aqua);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,7 +171,31 @@ div a {
 }
 
 /* Responsive Layout */
-@media screen and (max-width: 986px) {
+@media screen and (max-width: 990px) {
+    /* When navbar moves to next line, fill top line with name */
+    #top-header h1 {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    /* When navbar moves to next line, center navbar */
+    nav {
+        margin: 0 auto;
+    }
+
+    /* TODO: center image */
+    header img {
+        text-align: center;
+    }
+
+    header h2 {
+        min-width: 100%;
+        text-align: center;
+        left: 0;
+        bottom: 0;
+    }
+}
+/* @media screen and (max-width: 986px) {
     #top-header {
         flex-direction: column;
         width: 100%;
@@ -179,7 +207,7 @@ div a {
     }
 
 
-}
+} */
 
 /* @media screen and (max-width: 768px) {
     header, #top-header {
@@ -203,7 +231,7 @@ div a {
     main h2 {
         width: 100%;
         border-right: none;
-        border-bottom: 3px solid rgb(17, 2, 17);
+        border-bottom: 3px solid var(--dark-purple);
         text-align: left;
         padding-bottom: 10px;
     }
