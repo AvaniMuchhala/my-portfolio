@@ -21,7 +21,7 @@ header {
 
 /* Top Gray Header */
 #top-header {
-    display: flex; /* to align name and navbar in row */
+    display: flex; /* aligns name and navbar in row */
     flex-wrap: wrap; /* wrap navbar to next line if doesnt fit */
     justify-content: space-between; /* position name and navbar to ends of site */ 
     align-items: center; /* position elements in center vertically */
@@ -41,7 +41,7 @@ header {
 nav ul {
     float: right;
     padding: 0 30px 0 0;
-    display: flex; /* to align list items in row */
+    display: flex; /* aligns list items in row */
 }
 
 nav li {
@@ -83,27 +83,28 @@ main h2 {
     border-right: 3px solid var(--dark-purple);
     padding: 20px;
     text-align: right;
-    width: 20%;
+    width: 20%; /* keeps 20% of viewport for titles, roughly 80% for content */
 }
 
 #about-me, #work, #contact-me {
-    display: flex;
-    margin: 40px 0;
+    display: flex; /* makes section title and content flex items in row */
+    margin: 40px 0; /* gives space between sections */
 }
 
 /***** ABOUT ME SECTION *****/
-#about-me p{
+#about-me p {
     width: 80%;
     padding: 20px;
     font-size: 20px;
+    line-height: 1.5;
 }
 
 /***** WORK SECTION *****/
-#work #projects {
+#projects {
     width: 80%;
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;  /* section and div are flex items */
+    display: flex;  /* 1st and remaining 4 projs are flex items */
+    flex-wrap: wrap; /* 4 projects wrap to next line */ 
 }
 
 /* Individual Projects */
@@ -111,25 +112,24 @@ main h2 {
     background-image: url("../images/web_dev_background.jpg");
     background-size: cover;
     filter: brightness(70%);
-    /* width: 80%; */
-    margin: 15px 15px;
+    margin: 10px;
     border: 4px solid var(--dull-aqua);
-    position: relative;
+    position: relative; /* to position project title cards relative to project */
 }
 
 #project-1 {
-    flex: 0 0 86%;
+    flex: 0 0 87%;
     height: 300px;
 }
 
-div {
+#four-projects {
     flex: 0 0 90%;
     display: flex;
-    flex-wrap: wrap; /* anchor elements are flex items */
+    flex-wrap: wrap; /* anchor elements (indiv 4 projects) are flex items */
 }
 
-div a {
-    flex: 0 0 47%;
+#project-2, #project-3, #project-4, #project-5 {
+    flex: 0 0 47.5%;
     height: 150px;
 }
 
@@ -139,15 +139,15 @@ div a {
     left: 0;
     width: 175px;
     height: 50px;
-    color:var(--dark-gray);
+    color: var(--dark-gray);
     background-color: var(--dull-aqua);
-    display: flex;
+    display: flex; /* header and para are flex items */
     flex-direction: column;
     justify-content: center;
 }
 
 /* Project becomes brighter if hovered over */
-#work #projects a:hover {
+#projects a:hover {
     filter:brightness(100%);
     cursor: pointer;
 }
@@ -171,6 +171,16 @@ div a {
 }
 
 /* Responsive Layout */
+@media screen and (max-width: 1164px) {
+    #project-1 {
+        height: 150px;
+    }
+    
+    #project-2, #project-3, #project-4, #project-5 {
+        min-width: 97%;
+    }
+}
+
 @media screen and (max-width: 990px) {
     /* When navbar moves to next line, fill top line with name */
     #top-header h1 {
@@ -195,6 +205,7 @@ div a {
         bottom: 0;
     }
 }
+
 /* @media screen and (max-width: 986px) {
     #top-header {
         flex-direction: column;
