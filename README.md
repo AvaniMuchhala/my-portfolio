@@ -6,11 +6,12 @@ My portfolio was built to showcase my work and skills to aid me in my job search
 
 ## Usage
 
-Click on website URL: 
+Click on website URL: https://avanimuchhala.github.io/my-portfolio/
 
 Once on my portfolio, use the navigation bar to view the corresponding section on the site. Click on the individual projects in the "Work" section to view the deployed application. Use the links in the "Contact Me" section to contact me or view my projects in GitHub.
 
-Below is a screenshot of how my portfolio should appear:
+Below is an animation demoing my portfolio:
+![portfolio demo](./assets/portfolio_demo.gif)
 
 ## Credits
 
