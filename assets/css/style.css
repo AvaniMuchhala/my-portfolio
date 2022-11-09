@@ -34,7 +34,7 @@ header {
     background-color: var(--dull-aqua);
     color: var(--dark-gray);
     font-size: 50px;
-    height: 50px;
+    min-height: 50px;
     padding: 0 0 0 30px;
 }
 
@@ -56,7 +56,6 @@ nav a {
 
 /* Profile Image */
 header img {
-    border-radius: 25%;
     border: 3px solid var(--dark-gray);
     margin-left: 2%;
     height: 250px;
@@ -110,29 +109,23 @@ main h2 {
 
 /* Individual Projects */
 #project-1, #project-2, #project-3, #project-4, #project-5 {
-    background-image: url("../images/web_dev_background.jpg");
-    background-size: cover;
     filter: brightness(70%);
     margin: 10px;
     border: 4px solid var(--dull-aqua);
     position: relative; /* to position project title cards relative to project */
 }
 
+/* Makes project 1 the largest */
 #project-1 {
-    background-image: url("../images/portfolio_img.jpg");
-    background-size: 100% 100%;
     flex: 0 0 87%;
     height: 300px;
 }
 
-#project-2 {
-    background-image: url("../images/horiseon_img.png");
-    background-size: cover;
-}
-
-#project-3 {
-    background-image: url("../images/prework_img.jpg");
-    background-size: 100% 150%;
+#projects img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop image to section area */
+    overflow: hidden; /* avoid scroll bar*/
 }
 
 #four-projects {
@@ -161,7 +154,7 @@ main h2 {
 
 /* Project becomes brighter if hovered over */
 #projects a:hover {
-    filter:brightness(100%);
+    filter: brightness(100%);
     cursor: pointer;
 }
 
@@ -202,9 +195,23 @@ main h2 {
         flex-direction: column;
     }
 
+    /* Each project takes up its own row  */
+    #project-1, #project-2, #project-3, #project-4, #project-5 {
+        display: block;
+    }
+
+    #projects {
+        display: block;
+        margin: auto;
+    }
+
+    #project-1 {
+        min-width: 97%;
+    }
+
     /* Reformat section headers */
     main h2 {
-        width: 90%;
+        width: 95%;
         border-right: none;
         border-bottom: 3px solid var(--dark-purple);
         text-align: left;
@@ -212,9 +219,13 @@ main h2 {
         margin-left: 10px;
     }
 
-    /* TODO: center paragraph on smaller screen sizes */
+    /* Ensure paragraph spans full width of screen */
     #about-me p {
-        align-items: center;
+        width: auto;
+    }
+
+    #contact-me ul {
+        margin: 0 auto;
     }
 }
 
@@ -231,14 +242,23 @@ main h2 {
         margin: 0 auto;
     }
 
-    /* Decrease padding between navbar list items so they fit on same line */
+    /* Remove flex, display list items in rows */
+    nav ul {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* Decrease padding between navbar list items */
     nav li {
         padding: 10px;
     }
 
-    /* TODO: center image properly */
+    /* Center image */
     header img {
-        left: 30%; 
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 
     /* Move subtitle below image */
@@ -255,6 +275,7 @@ main h2 {
     #contact-me ul {
         flex-direction: column;
         align-items: flex-start;
+        margin: 0 auto;
     }
 
     /* Separate list items from each other */
@@ -264,7 +285,18 @@ main h2 {
 }
 
 @media screen and (max-width: 500px){
+    /* Ensure header is spanning full width of smaller screen */
     header {
-      width: 100vh;
+      width: 100%;
+    }
+}
+
+@media screen and (max-width: 380px){
+    #top-header h1 {
+        font-size: 40px;
+    }
+
+    header h2 {
+        font-size: 30px;
     }
 }

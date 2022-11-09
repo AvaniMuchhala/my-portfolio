@@ -2,7 +2,7 @@
 
 ## Description
 
-My portfolio was built to showcase my experiences and skills to aid me in my job search. My portfolio includes a brief description about myself, my past projects, my resume, and ways to contact me. Building this portfolio also helped me practice HTML and CSS.
+My portfolio was built to showcase my work and skills to aid me in my job search. My portfolio includes a brief description about myself, my past projects, my resume, and ways to contact me. Building this portfolio also helped me practice HTML and CSS.
 
 ## Usage
 
@@ -17,7 +17,9 @@ Below is a screenshot of how my portfolio should appear:
 Images:
 
 https://depositphotos.com/stock-photos/portfolio.html
+
 https://unsplash.com/s/photos/notes
+
 https://www.umbrellaconsultants.com/outer-banks-web-development-web-design/
 
 ## License
